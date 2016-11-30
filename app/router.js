@@ -8,9 +8,9 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route(`index`, {path: `/` }, function() {
-    this.route('register-user');
-  });
 
+  });
+  this.route('register-user');
   this.route('login');
 
 });
