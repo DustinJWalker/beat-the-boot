@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('register-user');
   this.route('login');
 
+  this.route('register-shop');
 });
 
 export default Router;
