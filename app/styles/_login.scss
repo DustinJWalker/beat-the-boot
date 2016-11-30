@@ -1,0 +1,15 @@
+button.card-footer-item {
+  font: inherit;
+  background: $primary;
+  border: 0;
+  color: $white;
+}
+
+.hero-body.is-centered {
+  display: flex;
+  justify-content: center;
+
+  .card {
+    width: 500px;
+  }
+}
