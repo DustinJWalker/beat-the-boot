@@ -1,5 +1,7 @@
 .hero--adjust {
-  margin: 0 -1rem;
+  > * + * {
+    margin-top: 1rem;
+  }
 }
 
 .coffee-shop {
@@ -20,5 +22,12 @@
     transform: translate(-50%, -50%);
     font-size: 3rem;
     color: $white;
+  }
+}
+
+.column {
+  &.is-no-padding {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }

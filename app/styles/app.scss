@@ -4,13 +4,3 @@
 @import 'box-sizing';
 @import 'login';
 @import 'home-page';
-
-* {
-  box-sizing: border-box;
-}
-
-.column {
-  &.is-no-padding {
-    padding: 0;
-  }
-}
