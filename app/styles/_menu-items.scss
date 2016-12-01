@@ -1,9 +1,14 @@
 
 .box   {
-  background: lightgray;
-  border: 0.1rem solid darkgray;
+  background: $grey-lighter;
+  border: 0.1rem solid $grey-light;
 }
 
 .level-left  {
   display: inline;
+}
+
+.footer  {
+  background: white;
+  text-decoration: none;
 }
