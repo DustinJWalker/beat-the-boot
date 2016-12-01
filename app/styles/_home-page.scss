@@ -1,0 +1,11 @@
+.hero--adjust {
+  margin: 0 -1rem;
+}
+
+.columns {
+  flex-direction: column;
+
+  .column {
+    margin-top: -2rem;
+  }
+}
