@@ -15,6 +15,7 @@ Router.map(function() {
 
   this.route('register-shop');
   this.route('add-menu');
+  this.route('menu-items');
 });
 
 export default Router;
