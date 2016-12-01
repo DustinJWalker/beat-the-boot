@@ -2,10 +2,23 @@
   margin: 0 -1rem;
 }
 
-.columns {
-  flex-direction: column;
+.coffee-shop {
+  position: relative;
+  overflow: hidden;
 
-  .column {
-    margin-top: -2rem;
+  &__pic {
+    display: block;
+    margin: 0;
+    filter: contrast(180%) brightness(50%);
+  }
+
+  &__overlay {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: $white;
   }
 }
