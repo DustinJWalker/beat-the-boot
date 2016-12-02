@@ -4,7 +4,7 @@
       <h1 class="title">Beat the Boot</h1>
     </div>
     <div class="control is-negative-margin">
-      <a href="#" class="button button--large is-primary">Logout</a>
+      {{#link-to "login" class="button button--large is-info"}} Logout {{/link-to}}
     </div>
   </div>
 </div>
@@ -21,20 +21,21 @@
     </div>
   </div>
 
-  {{!-- <div class="control is-large">
-      <h1 class="title">menu</h1>
-    </div> --}}
 
   <div class="box">
     <div class="level is-mobile">
       <div class="level-left">
-        <div class="title is-3">Black Coffee</div>
+        <div class="control">
+          <div class="title is-3">Black Coffee</div>
+          <p class="subtitle"></p>
+        </div>
         <p class="title is-6 is-pulled-left">this coffee is black</p>
       </div>
       <div class="level-right">
         <p class="control has-addons has-addons-centered">
           <span class="select">
     <select>
+      <option>select</option>
       <option>1</option>
       <option>2</option>
       <option>3</option>
@@ -44,6 +45,7 @@
       <option>7</option>
       <option>8</option>
       <option>9</option>
+      <option>10</option>
     </select>
   </span>
           <a class="button is-info">
@@ -64,6 +66,7 @@
         <p class="control has-addons has-addons-centered">
           <span class="select">
               <select>
+                <option>select</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -73,6 +76,7 @@
                 <option>7</option>
                 <option>8</option>
                 <option>9</option>
+                <option>10</option>
               </select>
             </span>
           <a class="button is-info">
@@ -94,6 +98,7 @@
         <p class="control has-addons has-addons-centered">
           <span class="select">
               <select>
+                <option>select</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -103,18 +108,19 @@
                 <option>7</option>
                 <option>8</option>
                 <option>9</option>
+                <option>10</option>
 
               </select>
             </span>
           <a class="button is-info">
-                Add
-              </a>
+            Add
+          </a>
         </p>
 
       </div>
     </div>
   </div>
-  <a class="button button--large is-fullwidth is-info is-pulled-right">
+  <a class="button button--large is-fullwidth is-info">
     <span class="icon">
       <i class="fa fa-shopping-cart"></i>
     </span>
