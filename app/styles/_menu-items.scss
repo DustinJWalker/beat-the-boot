@@ -17,3 +17,21 @@
   padding: 1.5rem;
   font-size: 1.3rem;
 }
+
+.section--last-of-type {
+  :last-of-type {
+    margin: 0;
+  }
+}
+
+.coffee-shop--height {
+  height: 20rem;
+}
+
+.section--less-padding {
+  padding: 0 20px;
+}
+
+.control-is-align {
+  align-items: center;
+}
