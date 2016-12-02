@@ -18,6 +18,7 @@ Router.map(function() {
   this.route('menu-items');
   this.route('home-page');
   this.route('checkout-page');
+  this.route('coffee-shop-account');
 });
 
 export default Router;
