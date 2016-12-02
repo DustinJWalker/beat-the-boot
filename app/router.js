@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('add-menu');
   this.route('menu-items');
   this.route('home-page');
+  this.route('checkout-page');
 });
 
 export default Router;
