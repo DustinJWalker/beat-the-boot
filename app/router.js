@@ -12,15 +12,12 @@ Router.map(function() {
   });
   this.route('register-user');
   this.route('login');
-
   this.route('register-shop');
   this.route('add-menu');
   this.route('menu-items');
   this.route('home-page');
-  this.route('checkout-page', function() {
-    this.route('confirmation');
-  });
-  this.route('order-confirmation');
+  this.route('checkout-page');
+  this.route('coffee-shop-account');
 });
 
 export default Router;
