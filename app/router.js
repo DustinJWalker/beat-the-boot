@@ -20,6 +20,7 @@ Router.map(function() {
   this.route('checkout-page', function() {
     this.route('confirmation');
   });
+  this.route('order-confirmation');
 });
 
 export default Router;
