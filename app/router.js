@@ -12,7 +12,6 @@ Router.map(function() {
   });
   this.route('register-user');
   this.route('login');
-
   this.route('register-shop');
   this.route('add-menu');
   this.route('menu-items');

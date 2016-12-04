@@ -9,30 +9,41 @@
       <div class="body">
         <div class="level is-mobile">
           <div class="level-left">
-            <div class="title is-3">Big Kahuna</div>
+            <div class="title is-5">Big Kahuna</div>
+            <div class="title is-6">All the coffee</div>
           </div>
           <p class="control">
             <input class="input is-medium" type="text" placeholder="Special Requests">
           </p>
           <div class="level-right">
-            content
+            <span class="icon">
+              <i class="fa fa-usd"></i>
+            </span>
+              <span class="total">
+                12.00
+              </span>
+
           </div>
         </div>
       </div>
     </section>
     <footer class="modal-card-foot">
-      <a class="button is-danger">Cancel</a>
-      <p class="control has-addons has-addons-right">
+      <div class="level level-space-between">
+        <div class="level-item level-left is-expanded">
+          {{#link-to "order-confirmation" class="button button--large is-success"}}
+            Checkout
+          {{/link-to}}
+        </div>
+        <div class="level-item level-right is-pulled-right">
+
           <span class="icon">
             <i class="fa fa-usd"></i>
           </span>
             <span class="total">
               12.00
             </span>
-          <a class="button is-success">
-            Checkout
-          </a>
-        </p>
-    </footer>
+        </div>
+      </div>
+  </footer>
   </div>
 </div>
