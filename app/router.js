@@ -17,7 +17,11 @@ Router.map(function() {
   this.route('menu-items');
   this.route('home-page');
   this.route('checkout-page');
-  this.route('coffee-shop-account');
+  this.route('coffee-shop-account', function() {
+    this.route('account');
+    this.route('menu');
+    this.route('incoming-orders');
+  });
 });
 
 export default Router;
