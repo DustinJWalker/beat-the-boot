@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
 
         // login user
         this.get('session').authenticate(authenticator, secretStuff);
-        // redirect why not?
+        this.transitionToRoute('home-page');
       })
       .catch(() => {
         alert('Error Creating User');
