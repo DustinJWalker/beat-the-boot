@@ -10,11 +10,9 @@
 </div>
 <div class="section">
   <div class="level">
-    {{!-- {{#link-to "coffee-shop-account.account-info"  class="button is-fullwidth is-large is-info"}} Account {{/link-to}}
-    {{#link-to  "coffee-shop-account.menu-list" class="button is-fullwidth is-large is-primary"}} Menu {{/link-to}}
-    {{#link-to  "coffee-shop-account.incoming-orders" class="button is-fullwidth is-large success"}} Incoming orders {{/link-to}} --}}
-    <a href="" class="button is-fullwidth button-is-br-none  is-large is-info">Account</a>
-    <a href="" class="button is-fullwidth button-is-br-none  is-large is-primary">Menu</a>
-    <a href="" class="button is-fullwidth button-is-br-none  is-large is-success">Incoming orders</a>
+    {{#link-to "coffee-shop-account.account"  class="button button-is-br-none is-fullwidth is-large is-info"}} Account {{/link-to}}
+    {{#link-to  "coffee-shop-account.menu" class="button button-is-br-none is-fullwidth is-large is-primary"}} Menu {{/link-to}}
+    {{#link-to  "coffee-shop-account.incoming-orders" class="button button-is-br-none is-fullwidth is-large is-success"}} Incoming orders {{/link-to}}
   </div>
+  {{outlet}}
 </div>
