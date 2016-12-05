@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('menu-items');
   this.route('home-page');
   this.route('checkout-page');
+  this.route('order-confirmation');
   this.route('coffee-shop-account', function() {
     this.route('account', function() {
       this.route('edit');
