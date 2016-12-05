@@ -23,7 +23,7 @@ Router.map(function() {
       this.route('edit');
     });
     this.route('menu', function() {
-
+      this.route('edit');
     });
     this.route('incoming-orders');
   });
