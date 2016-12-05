@@ -22,7 +22,9 @@ Router.map(function() {
     this.route('account', function() {
       this.route('edit');
     });
-    this.route('menu');
+    this.route('menu', function() {
+      this.route('edit');
+    });
     this.route('incoming-orders');
   });
 });

@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('route:coffee-shop-account/account/shop-account-edit', 'Unit | Route | coffee shop account/account/shop account edit', {
+moduleFor('route:coffee-shop-account/menu/edit', 'Unit | Route | coffee shop account/menu/edit', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });
