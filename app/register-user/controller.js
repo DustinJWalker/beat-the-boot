@@ -16,7 +16,8 @@ export default Ember.Controller.extend({
         const authenticator = 'authenticator:jwt';
 
         // login user
-        this.get('session').authenticate(authenticator, secretStuff);
+        return this.get('session').authenticate(authenticator, secretStuff);
+      }).then(() => {
         this.transitionToRoute('home-page');
       })
       .catch(() => {

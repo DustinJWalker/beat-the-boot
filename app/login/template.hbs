@@ -3,16 +3,16 @@
     <h1 class="title is-1 has-text-centered">Beat the Boot</h1>
   </div>
   <div class="hero-body is-centered">
-    <div class="card">
+    {{#simple-form onsubmit=(action "login") class="card" as |formValues|}}
       <div class="card-content">
         <h1 class="title has-text-centered">Login</h1>
         <label class="label">Email</label>
         <p class="control">
-          <input class="input" type="text" placeholder="Email">
-        </p>
+          {{input class="input" type="text" placeholder="Email" value=formValues.email}}
+        </p>``
         <label class="label">Password</label>
         <p class="control">
-          <input class="input" type="text" placeholder="Password">
+          {{input class="input" type="password" placeholder="Password" value=formValues.password}}
         </p>
         <p class="control">
         </p>
@@ -22,6 +22,6 @@
         {{#link-to "register-user" class="card-footer-item"}} Register {{/link-to}}
         <button class="card-footer-item">Login</button>
       </div>
-    </div>
+    {{/simple-form}}
   </div>
 </div>
