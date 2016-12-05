@@ -27,6 +27,7 @@ Router.map(function() {
     });
     this.route('incoming-orders');
   });
+  this.route('get-directions');
 });
 
 export default Router;
