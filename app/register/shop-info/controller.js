@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
       // save the new user model
       shop.save()
         .then(() => {
-          this.transitionToRoute('home-page');
+          this.transitionToRoute('coffee-shop-account.parking');
         })
         .catch(() => {
           alert('Error Creating Shop');
