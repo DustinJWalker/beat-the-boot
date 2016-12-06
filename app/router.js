@@ -10,9 +10,11 @@ Router.map(function() {
   this.route(`index`, {path: `/` }, function() {
 
   });
-  this.route('register-user');
+  this.route('register', function() {
+    this.route('shop-info');
+  });
+
   this.route('login');
-  this.route('register-shop');
   this.route('add-menu');
   this.route('menu-items');
   this.route('home-page');
