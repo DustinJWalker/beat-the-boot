@@ -30,6 +30,7 @@ Router.map(function() {
     });
     this.route('incoming-orders');
   });
+  this.route('find-parking');
 });
 
 export default Router;
