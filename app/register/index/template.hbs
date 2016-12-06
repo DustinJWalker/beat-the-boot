@@ -8,7 +8,7 @@
         <h1 class="title has-text-centered">Register</h1>
         <label class="label">First Name</label>
         <p class="control">
-          <input class="input" type="text" placeholder="First Name">
+          {{input class="input" type="text" placeholder="First Name" value=formValues.name}}
         </p>
 
         <label class="label">Email</label>
@@ -22,17 +22,17 @@
         </p>
         <label class="label">Who are You?</label>
         <p class="control">
-          <span class="select">
-         <select>
-           <option>Select</option>
-           <option>coffee drinker</option>
-           <option>coffee shop owner</option>
-         </select>
-        </span>
+          <span class="select is-fullwidth">
+            {{#power-select
+              search=false
+              options=shopOwnerOptions selected=formValues.isShopOwner onchange=(action "editShopOwner" formValues) as |option| }}
+              {{ option.text }}
+            {{/power-select}}
+          </span>
         </p>
       </div>
       <div class="card-footer">
-        {{#link-to "login" class="card-footer-item"}}Already have an account?{{/link-to}}
+        {{#link-to "login" class="card-footer-item" }}Already have an account?{{/link-to}}
         <button class="card-footer-item">Submit</button>
       </div>
     {{/simple-form}}
