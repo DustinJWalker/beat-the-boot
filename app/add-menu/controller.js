@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  session: Ember.inject.service(),
 
   sizes: [
     'small', 'medium', 'large'
@@ -8,9 +9,9 @@ export default Ember.Controller.extend({
 
   actions: {
     addItem(formValues) {
-      const item = this.store.createRecord('item', formValues);
-      item.set('size', this.size);
-      item.save().then(() => {
+      const drink = this.store.createRecord('drink', formValues);
+      drink.set('size', this.size);
+      drink.save().then(() => {
         this.transitionToRoute('menu-items');
       }).catch(() => {
         alert('Error creating menu item');

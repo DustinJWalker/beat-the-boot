@@ -17,9 +17,9 @@
           <span class="select is-fullwidth">
            {{#power-select
            options=sizes
-           selected=small
+           selected=selected
            placeholder="Please Select Size"
-           onchange=(action "chooseSize")
+           onchange=(action (mut selected))
             as |size|
           }}
             {{size}}
