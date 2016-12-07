@@ -15,7 +15,6 @@ export default Ember.Controller.extend({
 
   actions: {
     editShopOwner(object, { value }) {
-      console.log(value);
       Ember.set(object, 'isShopOwner', value);
     },
     saveUser(formValues) {
