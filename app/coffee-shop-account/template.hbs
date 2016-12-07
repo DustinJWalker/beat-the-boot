@@ -4,15 +4,14 @@
       <h1 class="title">Beat the Boot</h1>
     </div>
     <div class="control is-negative-margin">
-      {{#link-to "login" class="button button--large is-info"}} Logout {{/link-to}}
+      {{#link-to "login" class="button button--large is-info" }} Logout {{/link-to}}
     </div>
   </div>
 </div>
 <div class="section">
-  <div class="level">
-    {{#link-to "coffee-shop-account.account"  class="button button-is-br-none is-fullwidth is-large is-info"}} Account {{/link-to}}
-    {{#link-to  "coffee-shop-account.menu" class="button button-is-br-none is-fullwidth is-large is-primary"}} Menu {{/link-to}}
-    {{#link-to  "coffee-shop-account.incoming-orders" class="button button-is-br-none is-fullwidth is-large is-success"}} Incoming orders {{/link-to}}
+  {{bulma-tabs tabs=tabs class="is-boxed is-medium"}}
+
+  <div class="tabs is-boxed is-medium">
   </div>
   {{outlet}}
 </div>
