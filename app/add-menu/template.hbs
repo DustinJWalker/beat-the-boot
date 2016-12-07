@@ -3,38 +3,41 @@
     <h1 class="title is-1 has-text-centered">Add Menu Items</h1>
   </div>
   <div class="hero-body is-centered">
-    <div class="card">
+    {{#simple-form onsubmit=(action "addItem") class="card" as |formValues|}}
+
       <div class="card-content">
         <h1 class="title has-text-centered">Menu</h1>
         <label class="label">Beverage</label>
         <p class="control">
-          <input class="input" type="text" placeholder="Beverage">
+          {{input class="input" type="text" placeholder="Drink" value=formValues.drink}}
         </p>
+
         <p class="control">
           <label class="label">Size</label>
           <span class="select">
-           <select>
-             <option>select</option>
-             <option>small</option>
-             <option>medium</option>
-             <option>large</option>
-           </select>
+           {{#power-select-multiple
+           options=sizes
+           selected=small
+           placeholder="Please Select Size"
+           onchange=(action "chooseSize")
+            as |sizes|
+          }}
+            {{sizes}}
+            {{/power-select-multiple}}
         </span>
         </p>
         <label class="label">Description</label>
         <p class="control">
-          <textarea class="input" type="text" placeholder="Description"></textarea>
+          {{input class="input" type="textarea" placeholder="Description" value=formValues.description}}
         </p>
         <label class="label">Price</label>
         <p class="control has-icon has-icon-left">
-          <input class="input" type="text">
+          {{input class="input" type="text" placeholder="Price" value=formValues.price}}
           <i class="fa fa-money"></i>
         </p>
       </div>
       <div class="card-footer">
-
         <button class="card-footer-item">Submit</button>
       </div>
     </div>
   </div>
-</div>
