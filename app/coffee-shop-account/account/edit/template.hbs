@@ -1,41 +1,42 @@
-<form class="form">
+{{#simple-form onsubmit=(action "saveUser") startingValues=currentUser.user.shop class="form" as |formValues|}}
+
   <div class="card-body">
     {{#link-to "coffee-shop-account.account" class=" is-pulled-right" }}Back{{/link-to}}
   </div>
   <label class="label">Name of coffee shop</label>
   <p class="control">
-    <input class="input" type="text" placeholder="Name of coffee shop">
+    {{input value=formValues.name class="input" type="text" placeholder="Name of coffee shop" }}
   </p>
   <label class="label">Short description of your shop</label>
   <p class="control">
-    <textarea class="textarea" placeholder="description"></textarea>
+    {{textarea value=formValues.description class="textarea" placeholder="description"}}
   </p>
   <label class="label">Image of your coffee shop</label>
   <p class="control">
-    <input class="input" type="text" placeholder="url">
+    {{input value=formValues.url class="input" type="text" placeholder="url"}}
   </p>
   <label class="label">Address</label>
   <p class="control">
-    <input class="input" type="text" placeholder="Address">
+    {{input value=formValues.address class="input" type="text" placeholder="Address"}}
   </p>
   <label class="label">City</label>
   <p class="control">
-    <input class="input" type="text" placeholder="City">
+    {{input value=formValues.city class="input" type="text" placeholder="City"}}
   </p>
   <label class="label">State</label>
   <p class="control">
-    <input class="input" type="text" placeholder="State">
+    {{input value=formValues.state class="input" type="text" placeholder="State"}}
   </p>
   <label class="label">zip/postal Code</label>
   <p class="control">
-    <input class="input" type="text" placeholder="zip/postal code">
+    {{input value=formValues.zip class="input" type="text" placeholder="zip/postal code"}}
   </p>
   <label class="label">Phone Number</label>
   <p class="control">
-    <input class="input" type="text" placeholder="Phone Number">
+    {{input value=formValues.phone class="input" type="text" placeholder="Phone Number"}}
   </p>
 
   <div class="card-footer">
     <button class="card-footer-item">Submit</button>
   </div>
-</form>
+{{/simple-form}}

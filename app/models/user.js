@@ -5,5 +5,6 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   password: DS.attr('string'),
   isShopOwner: DS.attr('boolean'),
-  isAdmin: DS.attr('boolean')
+  isAdmin: DS.attr('boolean'),
+  shop: DS.belongsTo('shop'),
 });

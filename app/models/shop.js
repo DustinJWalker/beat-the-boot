@@ -8,5 +8,6 @@ export default DS.Model.extend({
   city: DS.attr('string'),
   state: DS.attr('string'),
   zip: DS.attr('string'),
-  phone: DS.attr('string')
+  phone: DS.attr('string'),
+  user: DS.belongsTo('user'),
 });
