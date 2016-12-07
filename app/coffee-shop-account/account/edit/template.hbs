@@ -1,10 +1,12 @@
-{{#simple-form class="form" onsubmit=(action "checkout")}}
+{{log currentUser.user.shop}}
+
+{{#simple-form class="form" startingValues=currentUser.user.shop onsubmit=(action "saveUser") as |formValues| }}
   <div class="card-body">
     {{#link-to "coffee-shop-account.account" class=" is-pulled-right" }}Back{{/link-to}}
   </div>
   <label class="label">Name of coffee shop</label>
   <p class="control">
-    {{input class="input" required="true" type="text" placeholder="Name of Coffee Shop" value=formValues.shopName}}
+    {{input class="input" required="true" type="text" placeholder="Name of Coffee Shop" value=formValues.name}}
   </p>
   <label class="label">Short description of your shop</label>
   <p class="control">
@@ -12,11 +14,11 @@
   </p>
   <label class="label">Image of your coffee shop</label>
   <p class="control">
-    {{input class="input" required="true" type="text" placeholder="URL" value=formValues.shopUrl}}
+    {{input class="input" required="true" type="text" placeholder="URL" value=formValues.picture}}
   </p>
   <label class="label">Address</label>
   <p class="control">
-    {{input class="input" required="true" type="text" placeholder="Address" value=formValues.address}}
+    {{input class="input" required="true" type="text" placeholder="Address" value=formValues.street}}
   </p>
   <label class="label">City</label>
   <p class="control">
