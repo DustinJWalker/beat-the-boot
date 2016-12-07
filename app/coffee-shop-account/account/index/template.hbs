@@ -1,4 +1,5 @@
 {{#link-to "coffee-shop-account.account.edit" class=" is-pulled-right " }}Edit{{/link-to}}
+
 <table class="table" style="background: inherit;">
   <thead>
     <tr>
@@ -7,7 +8,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>Steadfast</td>
+      <td>{{currentUser.user.shop.name}}</td>
     </tr>
   </tbody>
   <thead>
@@ -17,7 +18,7 @@
   </thead>
   <tbody>
     <tr>
-      <td> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</td>
+      <td>{{currentUser.user.shop.description}}</td>
     </tr>
   </tbody>
   <thead>
@@ -27,7 +28,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>Nashville</td>
+      <td>{{currentUser.user.shop.city}}</td>
     </tr>
   </tbody>
   <thead>
@@ -37,7 +38,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>Tennessee</td>
+      <td>{{currentUser.user.shop.state}}</td>
     </tr>
   </tbody>
   <thead>
@@ -47,7 +48,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>37209</td>
+      <td>{{currentUser.user.shop.zip}}</td>
     </tr>
   </tbody>
   <thead>
@@ -57,7 +58,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>(800)622-6222</td>
+      <td>{{currentUser.user.shop.phone}}</td>
     </tr>
   </tbody>
 
