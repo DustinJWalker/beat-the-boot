@@ -14,16 +14,16 @@
 
         <p class="control">
           <label class="label">Size</label>
-          <span class="select">
-           {{#power-select-multiple
+          <span class="select is-fullwidth">
+           {{#power-select
            options=sizes
            selected=small
            placeholder="Please Select Size"
            onchange=(action "chooseSize")
-            as |sizes|
+            as |size|
           }}
-            {{sizes}}
-            {{/power-select-multiple}}
+            {{size}}
+            {{/power-select}}
         </span>
         </p>
         <label class="label">Description</label>
@@ -39,5 +39,6 @@
       <div class="card-footer">
         <button class="card-footer-item">Submit</button>
       </div>
-    </div>
+    {{/simple-form}}
   </div>
+</div>
