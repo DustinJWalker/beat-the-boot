@@ -9,27 +9,9 @@
   </div>
 </div>
 <div class="section">
-  <div class="tabs is-boxed is-medium">
-    <ul>
-      <li class="is-active">
-        {{#link-to "coffee-shop-account.account" }}
-          <span class="icon is-small"><i class="fa fa-user"></i></span>
-          <span>Account</span>
-        {{/link-to}}
-      </li>
-      <li>
-        {{#link-to "coffee-shop-account.menu"}}
-          <span class="icon is-small"><i class="fa fa-cutlery"></i></span>
-          <span>Menu</span>
-        {{/link-to}}
-      </li>
-      <li>
-        {{#link-to "coffee-shop-account.incoming-orders"}}
-          <span class="icon is-small"><i class="fa fa-tasks"></i></span>
-          <span>Incoming orders</span>
-        {{/link-to}}
-      </li>
-    </ul>
-  </div>
+  {{bulma-tabs tabs=tabs class="is-boxed is-medium"}}
+
+  {{!-- <div class="tabs is-boxed is-medium">
+  </div> --}}
    {{outlet}}
 </div>
