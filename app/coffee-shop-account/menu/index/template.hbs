@@ -9,49 +9,14 @@
     </tr>
   </thead>
   <tbody>
+    {{#each model as |drink|}}
+
     <tr>
-      <td>1. Black Coffee</td>
-      <td>Bold flavorful tatse</td>
-      <td>$2.50</td>
-      <td>{{#link-to "coffee-shop-account.menu.edit" class="is-pulled-right button is-small is-primary" }}Edit{{/link-to}}</td>
+      <td>{{drink.name}}</td>
+      <td>{{drink.description}}</td>
+      <td>{{drink.price}}</td>
+      <td>{{#link-to "coffee-shop-account.menu.edit" drink class="is-pulled-right button is-small is-primary" }}Edit{{/link-to}}</td>
     </tr>
-    <tr>
-    </tr>
-  </tbody>
-  <thead>
-    <tr>
-      <th>Item</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1. Black Coffee</td>
-      <td>Bold flavorful tatse</td>
-      <td>$2.50</td>
-      <td>{{#link-to "coffee-shop-account.menu.edit" class="is-pulled-right button is-small is-primary" }}Edit{{/link-to}}</td>
-    </tr>
-    <tr>
-    </tr>
-  </tbody>
-  <thead>
-    <tr>
-      <th>Item</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1. Black Coffee</td>
-      <td>Bold flavorful tatse</td>
-      <td>$2.50</td>
-      <td>{{#link-to "coffee-shop-account.menu.edit" class="is-pulled-right button is-small is-primary" }}Edit{{/link-to}}</td>
-    </tr>
-    <tr>
-    </tr>
+    {{/each}}
   </tbody>
 </table>
