@@ -1,0 +1,21 @@
+{{#simple-form class="form" onsubmit=(action "saveDrink") as |formValues|}}
+  <div class="card-body">
+    {{#link-to "coffee-shop-account.menu" class=" is-pulled-right" }}Back{{/link-to}}
+  </div>
+  <label class="label">Menu Item</label>
+  <p class="control">
+    {{input class="input" type="text" placeholder="Menu Item" value=formValues.name}}
+  </p>
+  <label class="label">Short description of item</label>
+  <p class="control">
+    {{input class="input" placeholder="Description" value=formValues.description}}
+  </p>
+  <label class="label">Price</label>
+  <p class="control">
+    {{input class="input" type="text" placeholder="Price" value=formValues.price}}
+  </p>
+
+  <div class="card-footer">
+    <button class="card-footer-item">Submit</button>
+  </div>
+{{/simple-form}}
