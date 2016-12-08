@@ -8,6 +8,31 @@ export default Ember.Controller.extend({
   ],
 
   actions: {
+  foo() {
+    const flashMessages = Ember.get(this, 'flashMessages').add({
+      message: 'Item(s) added to cart',
+      timeout: 500,
+      priority: 200,
+      sticky: true,
+      showProgress: true,
+      extendedTimeout: 500,
+      destroyOnClick: false
+    });
+
+    Ember.get(this, 'model')
+      .save()
+      .then((res) => {
+        flashMessages.success('Successfully saved!');
+        doSomething(res);
+      })
+      .catch((err) => {
+        flashMessages.danger('Something went wrong!');
+        handleError(err);
+      });
+  }
+},
+
+  actions: {
     addDrink(formValues) {
       const drink = this.store.createRecord('drink', formValues);
       drink.set('quantity', this.quantity);
@@ -17,8 +42,8 @@ export default Ember.Controller.extend({
         alert('Error creating menu item');
       });
     },
-    selectQuantity(size) {
-      this.set('size', size);
+    selectQty(quantity) {
+      this.set('quantity', quantity);
     }
   }
 
