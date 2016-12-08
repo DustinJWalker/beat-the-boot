@@ -9,9 +9,9 @@ export default Ember.Controller.extend({
       // save the new user model
       drink.save()
         .then(() => {
-          this.transitionToRoute('coffee-shop-account.account.menu');
+          this.transitionToRoute('coffee-shop-account.menu');
         })
-        .catch(() => {
+        .catch((e) => {
           alert('Error Creating Shop');
         });
     }
