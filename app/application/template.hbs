@@ -1,4 +1,6 @@
 <section class="section">
-      {{outlet}}
-      Hello, {{ currentUser.user.email }}
+  {{#each flashMessages.queue as |flash|}}
+    {{flash-message flash=flash }}
+  {{/each}}
+  {{outlet}} Hello, {{ currentUser.user.email }}
 </section>

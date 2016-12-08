@@ -2,6 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
+  flashMessages: Ember.inject.service(),
+
+  init() {
+    this._super(...arguments);
+    this.get('flashMessages').success('HEY')
+  },
 
   quantities: [
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
@@ -23,27 +29,16 @@ export default Ember.Controller.extend({
 
   // actions: {
     addToCart() {
-      const flashMessages = Ember.get(this, 'flashMessages').add({
-        message: 'Item(s) added to cart',
-        type: 'success',
-        timeout: 500,
-        priority: 200,
-        sticky: true,
-        showProgress: true,
-        extendedTimeout: 500,
-        destroyOnClick: false
-      });
-
       Ember.get(this, 'model')
-      .save()
-      .then((res) => {
-        flashMessages.success('Successfully saved!');
-        doSomething(res);
-      })
-      .catch((err) => {
-        flashMessages.danger('Something went wrong!');
-        handleError(err);
-      });
+        .save()
+        .then((res) => {
+          this.get('flashMessages').success('Successfully saved!');
+          doSomething(res);
+        })
+        .catch((err) => {
+          this.get('flashMessages').danger('Something went wrong!');
+          handleError(err);
+        });
     }
   // }
 });
