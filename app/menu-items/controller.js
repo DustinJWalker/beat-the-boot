@@ -6,32 +6,6 @@ export default Ember.Controller.extend({
   quantities: [
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
   ],
-
-  actions: {
-  foo() {
-    const flashMessages = Ember.get(this, 'flashMessages').add({
-      message: 'Item(s) added to cart',
-      timeout: 500,
-      priority: 200,
-      sticky: true,
-      showProgress: true,
-      extendedTimeout: 500,
-      destroyOnClick: false
-    });
-
-    Ember.get(this, 'model')
-      .save()
-      .then((res) => {
-        flashMessages.success('Successfully saved!');
-        doSomething(res);
-      })
-      .catch((err) => {
-        flashMessages.danger('Something went wrong!');
-        handleError(err);
-      });
-  }
-},
-
   actions: {
     addDrink(formValues) {
       const drink = this.store.createRecord('drink', formValues);
@@ -45,8 +19,31 @@ export default Ember.Controller.extend({
     selectQty(quantity) {
       this.set('quantity', quantity);
     }
-  }
+  },
 
+  // actions: {
+    addToCart() {
+      const flashMessages = Ember.get(this, 'flashMessages').add({
+        message: 'Item(s) added to cart',
+        type: 'success',
+        timeout: 500,
+        priority: 200,
+        sticky: true,
+        showProgress: true,
+        extendedTimeout: 500,
+        destroyOnClick: false
+      });
 
-
+      Ember.get(this, 'model')
+      .save()
+      .then((res) => {
+        flashMessages.success('Successfully saved!');
+        doSomething(res);
+      })
+      .catch((err) => {
+        flashMessages.danger('Something went wrong!');
+        handleError(err);
+      });
+    }
+  // }
 });

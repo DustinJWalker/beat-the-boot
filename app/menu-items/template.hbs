@@ -33,7 +33,7 @@
         <p class="title is-6 is-pulled-left">this coffee is black</p>
       </div>
       <div class="level-right">
-        <p class="control has-addons has-addons-centered">
+        <p class="control__add">
           <span class="select is-fullwidth">
             {{#power-select
             options=quantities
@@ -46,12 +46,12 @@
              {{quantity}}
              {{/power-select}}
            </span>
-           {{!-- {{#each flashMessages.queue as |flash|}}
-           {{flash-message flash=flash }} --}}
+           {{#each flashMessages.queue as |flash|}}
+           {{flash-message flash=flash }}
+           {{/each}}
            <a class="button is-info" >
                  Add
           </a>
-          {{!-- {{/each}} --}}
          </p>
        </div>
      </div>
