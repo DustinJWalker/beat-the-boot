@@ -25,7 +25,9 @@
           <span class="select is-fullwidth">
             {{#power-select
               search=false
-              options=shopOwnerOptions selected=formValues.isShopOwner onchange=(action "editShopOwner" formValues) as |option| }}
+              options=shopOwnerOptions
+              selected=selected
+              onchange=(action "editShopOwner" formValues) as |option| }}
               {{ option.text }}
             {{/power-select}}
           </span>

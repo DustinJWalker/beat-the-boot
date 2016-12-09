@@ -14,8 +14,9 @@ export default Ember.Controller.extend({
   ],
 
   actions: {
-    editShopOwner(object, { value }) {
-      Ember.set(object, 'isShopOwner', value);
+    editShopOwner(object, selected) {
+      this.set('selected', selected);
+      Ember.set(object, 'isShopOwner', selected.value);
     },
     saveUser(formValues) {
       // create a new user model
