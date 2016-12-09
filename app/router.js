@@ -19,7 +19,7 @@ Router.map(function() {
   this.route('menu-items');
   this.route('app', function() {
     this.route('shops', function() {
-
+      this.route('menu', { path: '/:shop_id/menu' });
     });
   });
   this.route('checkout-page');

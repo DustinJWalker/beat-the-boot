@@ -12,25 +12,19 @@
 <section class="section section--last-of-type">
   <div class="columns is-multiline">
     <div class="column is-12 is-no-padding">
-      <div class="coffee-shop coffee-shop--height">
-        <h1 class="coffee-shop__overlay">
-            Steadfast
-          </h1>
-        <img src="images/Coffee-shop2.jpeg" class="coffee-shop__pic" alt="">
-      </div>
+      {{shop-header shop=model}}
     </div>
   </div>
-</section>
 
-
+  {{#each model.drinks as |drink|}}
   {{#simple-form onsubmit=(action "selectQty") class="box" as |formValues|}}
     <div class="level is-mobile">
       <div class="level-left">
         <div class="control">
-          <div class="title is-3">Black Coffe</div>
-          <p class="subtitle"></p>
+          <div class="title is-3">{{drink.name}}</div>
+          <p class="subtitle">${{drink.price}}</p>
         </div>
-        <p class="title is-6 is-pulled-left">this coffee is black</p>
+        <p class="title is-6 is-pulled-left">{{drink.description}}</p>
       </div>
       <div class="level-right">
         <p class="control__add">
@@ -54,6 +48,8 @@
        </div>
      </div>
      {{/simple-form}}
+  {{/each}}
+
 
   {{#link-to  "checkout-page" class="button button-is-br-none button--large is-fullwidth is-info" }}
     <span class="icon">
@@ -61,3 +57,4 @@
     </span>
     <span>Checkout</span>
   {{/link-to}}
+</section>
