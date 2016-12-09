@@ -34,7 +34,7 @@
       </div>
       <div class="level-right">
         <p class="control__add">
-          <span class="foo">
+          <span class="qty">
             {{#power-select
             options=quantities
             selected=selected
@@ -47,7 +47,7 @@
              {{/power-select}}
            </span>
 
-           <a class="button is-info">
+           <a class="button is-info" {{action "addToCart"}}>
                  Add
           </a>
          </p>

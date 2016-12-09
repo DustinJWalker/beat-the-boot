@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
 
   init() {
     this._super(...arguments);
-    this.get('flashMessages').success('HEY')
+    this.get('flashMessages').success('HEY', {  timeout: 3000000000000 })
   },
 
   quantities: [
@@ -24,21 +24,19 @@ export default Ember.Controller.extend({
     },
     selectQty(quantity) {
       this.set('quantity', quantity);
-    }
-  },
+    },
 
-  // actions: {
     addToCart() {
-      Ember.get(this, 'model')
-        .save()
-        .then((res) => {
+      // Ember.get(this, 'model')
+      //   .save()
+      //   .then((res) => {
           this.get('flashMessages').success('Successfully saved!');
-          doSomething(res);
-        })
-        .catch((err) => {
-          this.get('flashMessages').danger('Something went wrong!');
-          handleError(err);
-        });
+          // doSomething(res);
+        // })
+        // .catch((err) => {
+        //   this.get('flashMessages').danger('Something went wrong!');
+        //   handleError(err);
+        // });
     }
-  // }
+  }
 });
