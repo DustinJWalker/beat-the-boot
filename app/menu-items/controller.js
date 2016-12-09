@@ -4,10 +4,10 @@ export default Ember.Controller.extend({
   session: Ember.inject.service(),
   flashMessages: Ember.inject.service(),
 
-  init() {
-    this._super(...arguments);
-    this.get('flashMessages').success('HEY', {  timeout: 3000000000000 })
-  },
+  // init() {
+  //   this._super(...arguments);
+  //   this.get('flashMessages').success('HEY', {  timeout: 3000000000000 })
+  // },
 
   quantities: [
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
@@ -30,7 +30,7 @@ export default Ember.Controller.extend({
       // Ember.get(this, 'model')
       //   .save()
       //   .then((res) => {
-          this.get('flashMessages').success('Successfully saved!');
+          this.get('flashMessages').success('Item Added to Cart!', { timeout: 2000});
           // doSomething(res);
         // })
         // .catch((err) => {
