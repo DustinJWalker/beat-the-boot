@@ -1,21 +1,22 @@
-<form class="form">
+{{#simple-form class="form" startingValues=model onsubmit=(action "saveDrink") as |drink| }}
   <div class="card-body">
     {{#link-to "coffee-shop-account.menu" class=" is-pulled-right" }}Back{{/link-to}}
   </div>
   <label class="label">Menu Item</label>
   <p class="control">
-    <input class="input" type="text" placeholder="Menu Item">
+    {{input class="input" required="true" type="text" placeholder="Menu Item" value=drink.name}}
   </p>
   <label class="label">Short description of item</label>
   <p class="control">
-    <input class="input" placeholder="Description">
+    {{input class="input" required="true" type="text" placeholder="Description" value=drink.description}}
   </p>
   <label class="label">Price</label>
   <p class="control">
-    <input class="input" type="text" placeholder="Price">
+    {{input class="input" required="true" type="text" placeholder="Price" value=drink.price}}
   </p>
 
   <div class="card-footer">
-    <button class="card-footer-item">Submit</button>
+    <button {{action "deleteDrink"}} type="button" class="card-footer-item button is-danger is-medium">Delete</button>
+    <button class="card-footer-item button is-medium">Submit</button>
   </div>
-</form>
+{{/simple-form}}
