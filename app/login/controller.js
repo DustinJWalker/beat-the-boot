@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
 
       // login user
       this.get('session').authenticate(authenticator, secretStuff).then(() => {
-        this.transitionToRoute('home-page');
+        this.transitionToRoute('app.shops');
       });
     }
   }

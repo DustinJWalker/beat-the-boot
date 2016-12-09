@@ -17,7 +17,11 @@ Router.map(function() {
   this.route('login');
   this.route('add-menu');
   this.route('menu-items');
-  this.route('home-page');
+  this.route('app', function() {
+    this.route('shops', function() {
+
+    });
+  });
   this.route('checkout-page');
   this.route('order-confirmation', function(){
     this.route('get-directions');
