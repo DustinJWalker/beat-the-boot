@@ -36,7 +36,7 @@ export default Ember.Controller.extend({
         if (user.get('isShopOwner')) {
           this.transitionToRoute('register.shop-info');
         } else {
-          this.transitionToRoute('home-page');
+          this.transitionToRoute('app.shops');
         }
       })
       .catch(() => {

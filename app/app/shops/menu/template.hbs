@@ -1,0 +1,60 @@
+<div class="section section--less-padding">
+  <div class="control is-grouped control-is-align">
+    <div class="control is-expanded">
+      <h1 class="title">Beat the Boot</h1>
+    </div>
+    <div class="control is-negative-margin">
+      {{#link-to "login" class="button button--large is-info"}} Logout {{/link-to}}
+    </div>
+  </div>
+</div>
+
+<section class="section section--last-of-type">
+  <div class="columns is-multiline">
+    <div class="column is-12 is-no-padding">
+      {{shop-header shop=model}}
+    </div>
+  </div>
+
+  {{#each model.drinks as |drink|}}
+  {{#simple-form onsubmit=(action "selectQty") class="box" as |formValues|}}
+    <div class="level is-mobile">
+      <div class="level-left">
+        <div class="control">
+          <div class="title is-3">{{drink.name}}</div>
+          <p class="subtitle">${{drink.price}}</p>
+        </div>
+        <p class="title is-6 is-pulled-left">{{drink.description}}</p>
+      </div>
+      <div class="level-right">
+        <p class="control__add">
+          <span class="qty">
+            {{#power-select
+            options=quantities
+            selected=selected
+            value=formValues.quantity
+            placeholder="Qty"
+            onchange=(action (mut selected))
+             as |quantity|
+           }}
+             {{quantity}}
+             {{/power-select}}
+           </span>
+
+           <a class="button is-info" {{action "addToCart"}}>
+                 Add
+          </a>
+         </p>
+       </div>
+     </div>
+     {{/simple-form}}
+  {{/each}}
+
+
+  {{#link-to  "checkout-page" class="button button-is-br-none button--large is-fullwidth is-info" }}
+    <span class="icon">
+      <i class="fa fa-shopping-cart"></i>
+    </span>
+    <span>Checkout</span>
+  {{/link-to}}
+</section>
