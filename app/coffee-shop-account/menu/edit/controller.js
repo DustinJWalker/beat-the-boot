@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
       this.model.setProperties(formValues);
 
       this.model.save().then(() => {
-        this.transitionToRoute('coffee-shop-account.menu ');
+        this.transitionToRoute('coffee-shop-account.menu');
       });
     },
 
