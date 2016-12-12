@@ -21,10 +21,12 @@ Router.map(function() {
     this.route('shops', function() {
       this.route('menu', { path: '/:shop_id/menu' });
     });
-  });
-  this.route('checkout-page');
-  this.route('order-confirmation', function(){
-    this.route('get-directions');
+
+    this.route('checkout-page', { path: '/:order_id' });
+
+    this.route('order-confirmation', { path: '/order-confirmation/:order_id' },  function(){
+      this.route('get-directions');
+    });
   });
 
   this.route('coffee-shop-account', function() {

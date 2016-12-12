@@ -1,0 +1,40 @@
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title has-text-centered">Your Order is Complete!</p>
+      {{#link-to "app.shops"}}
+      <button class="delete"></button>
+      {{/link-to}}
+    </header>
+    <section class="modal-card-body">
+      <div class="body">
+        {{!-- <article class="message is-success">
+          <div class="message-header">
+            Your Order is Complete!
+          </div>
+          <div class="message-body">
+              <h4>Order Details</h4>
+              <h4>Order ETA</h4>
+          </div>
+        </article> --}}
+        {{outlet}}
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <div class="level level-space-between">
+        <div class="level-item level-left is-expanded">
+          {{#link-to "app.order-confirmation.get-directions" class="button button--large is-info" }}
+            Directions to {{model.shop.name}}
+        {{/link-to}}
+        </div>
+        <div class="level-item level-right is-pulled-right">
+          <a class="button button--large is-info">
+          Parking
+        </a>
+
+        </div>
+      </div>
+  </footer>
+  </div>
+</div>

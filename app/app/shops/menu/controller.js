@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import { task } from 'ember-concurrency';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
@@ -12,19 +13,26 @@ export default Ember.Controller.extend({
     this.set('cart', []);
   },
 
+  checkout: task(function * (lineItem) {
+    // Make a new order and save it and wait
+    const order = this.store.createRecord('order', {
+      shop: this.model,
+    });
+
+    yield order.save();
+
+    // Make a new line item for each item in the "cart" and attach them to the order and save
+    yield this.cart.map(({ quantity, drink }) => {
+      return this.store.createRecord('line-item', { order, quantity, drink })
+        .save();
+    });
+
+    this.transitionToRoute('app.order-confirmation', order);
+
+    // Then Transition to confirm page?
+  }),
+
   actions: {
-    addDrink(formValues) {
-      const drink = this.store.createRecord('drink', formValues);
-      drink.set('quantity', this.quantity);
-      drink.save().then(() => {
-        this.transitionToRoute('checkout-page');
-      }).catch(() => {
-        alert('Error creating menu item');
-      });
-    },
-    selectQty(quantity) {
-      this.set('quantity', quantity);
-    },
 
     addToCart({ quantity, drink }) {
       this.set('cart', [{quantity, drink}, ...this.cart]);
