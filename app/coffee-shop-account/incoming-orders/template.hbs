@@ -1,24 +1,28 @@
-
-<div class="box">
-  {{#link-to "coffee-shop-account.account" class=" is-pulled-right " }}back{{/link-to}}
-  <table class="table table-background">
-    <thead>
-      <tr>
-        <th>Item</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
-          <button class="is-pulled-right button is-small is-danger">delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+{{#each model as |order|}}
+  <h2>{{order.user.email}} - {{order.createdAt}}</h2>
+  <div class="box">
+    {{#link-to "coffee-shop-account.account" class=" is-pulled-right " }}back{{/link-to}}
+    <table class="table table-background">
+      <thead>
+        <tr>
+          <th>Quantity</th>
+          <th>Item</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each order.lineItems as |lineItem|}}
+          <tr>
+            <td>{{lineItem.quantity}}</td>
+            <td>{{lineItem.drink.name}}</td>
+            <td>{{lineItem.drink.description}}</td>
+            <td>{{lineItem.drink.price}}</td>
+            <td></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+{{/each}}
