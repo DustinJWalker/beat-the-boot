@@ -19,22 +19,36 @@
         {{#each model.lineItems as |lineItem|}}
           <tr>
             <td>{{lineItem.drink.name}}</td>
-            <td>${{lineItem.drink.price}}</td>
+            <td>{{format-money lineItem.drink.price}}</td>
             <td>{{lineItem.quantity}}</td>
-            <td>${{mult lineItem.quantity lineItem.drink.price}}</td>
+            <td>{{format-money (mult lineItem.quantity lineItem.drink.price)}}</td>
           </tr>
         {{/each}}
         <tr>
           <td></td>
           <td></td>
-          <td>Tax:</td>
-          <td>${{format-number (mult (price-total model.lineItems) 0.0925) presicion=2}}</td>
+          <td>Total:</td>
+          <td>
+            {{format-money (price-total model.lineItems) }}
+          </td>
         </tr>
         <tr>
           <td></td>
           <td></td>
-          <td>Total:</td>
-          <td>${{price-total model.lineItems}}</td>
+          <td>Tax:</td>
+          <td>{{format-money (mult (price-total model.lineItems) taxRate) }}</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>Total with Tax:</th>
+          <th>
+            {{format-money
+              (add
+                (price-total model.lineItems)
+                (mult (price-total model.lineItems) taxRate)
+              )}}
+          </th>
         </tr>
       </tbody>
       {{!-- <thead>
