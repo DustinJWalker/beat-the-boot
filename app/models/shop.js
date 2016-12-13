@@ -13,4 +13,5 @@ export default DS.Model.extend({
   user: DS.belongsTo('user'),
 
   drinks: DS.hasMany('drink'),
+  orders: DS.hasMany('order'),
 });
