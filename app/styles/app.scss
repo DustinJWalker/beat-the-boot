@@ -1,3 +1,6 @@
+$primary: #143053;
+$info: #143053;
+
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import 'bulma';
 @import 'ember-power-select';
@@ -13,6 +16,7 @@
 @import 'add-menu';
 @import 'register_shop-info';
 @import 'register';
+
 .control {
   margin-top: 0.5rem;
 }
