@@ -10,7 +10,9 @@
     </header>
     <section class="modal-card-body">
       <div class="body">
-        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=...&zoom=17&key=AIzaSyA5D_Id3AxIjerACjWPfEPmdXqzesfi14M" allowfullscreen></iframe>{{!-- {{#leaflet-map class="map" lat=lat lng=lng zoom=zoom}}
+        <iframe width="625" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=Current%20Location&destination={{model.shop.address}}&key=AIzaSyA5D_Id3AxIjerACjWPfEPmdXqzesfi14M" allowfullscreen></iframe>
+        <a href="https://www.google.com/maps/dir//{{ model.shop.address }}" target="_blank" class="button is-fullwidth is-primary">See On Google</a>
+        {{!-- {{#leaflet-map class="map" lat=lat lng=lng zoom=zoom}}
 
         {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" }}
 

@@ -26,12 +26,14 @@ Router.map(function() {
 
     this.route('order-confirmation', { path: '/order-confirmation/:order_id' },  function(){
       this.route('get-directions');
+      this.route('parking');
     });
   });
 
   this.route('coffee-shop-account', function() {
     this.route('account', function() {
       this.route('edit');
+      this.route('parking');
     });
     this.route('menu', function() {
       this.route('edit', {path: '/:id'});
