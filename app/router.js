@@ -39,6 +39,7 @@ Router.map(function() {
     });
     this.route('incoming-orders');
   });
+  this.route('parking');
 });
 
 export default Router;

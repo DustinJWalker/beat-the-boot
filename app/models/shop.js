@@ -14,4 +14,8 @@ export default DS.Model.extend({
 
   drinks: DS.hasMany('drink'),
   orders: DS.hasMany('order'),
+
+  address: Ember.computed('street', 'city', 'state', 'zip', function() {
+    return `${this.get('street')} ${this.get('city')} ${this.get('state')}`;
+  })
 });
