@@ -58,27 +58,28 @@ $info: #143053;
 .menu-wrapper {
   display: flex;
   justify-content: space-between;
-  .menu-container {
+  padding: 1rem;
+
+  .menu--left {
+    width: 45rem;
+    padding: .5rem;
+  }
+  .menu--middle {
+    width: 50rem;
+    text-align: left;
+    padding: .5rem;
+  }
+
+  .menu--right {
     display: flex;
     align-items: center;
-
-    > * + * {
-      padding-left: 10rem;
-
-      @media(max-width: 650px) {
-        padding-left: 2rem;
-      }
-    }
-
-
-    h1 {
-      margin: 0;
-      font-weight: bold;
-    }
+    padding-right: .5rem;
 
     p {
       margin: 0;
-      font-weight: bold;
+      padding-right: 1rem;
     }
   }
+
+
 }
