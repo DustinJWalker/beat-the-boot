@@ -7,16 +7,13 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route(`index`, {path: `/` }, function() {
+  this.route(`index`);
 
-  });
+  this.route('login');
   this.route('register', function() {
     this.route('shop-info');
   });
 
-  this.route('login');
-  this.route('add-menu');
-  this.route('menu-items');
   this.route('app', function() {
     this.route('shops', function() {
       this.route('menu', { path: '/:shop_id/menu' });
