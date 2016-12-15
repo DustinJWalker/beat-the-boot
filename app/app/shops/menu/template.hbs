@@ -1,36 +1,38 @@
-<div class="section section--less-padding">
-  <div class="control is-grouped control-is-align">
-    <div class="control is-expanded">
-      <h1 class="title">Beat the Boot</h1>
+<div class="hero hero--adjust">
+  <div class="helper">
+    <div class="control is-grouped control-is-align">
+      <div class="control is-expanded">
+        <h1 class="title">Beat the Boot</h1>
+      </div>
+      <div class="control is-negative-margin">
+        {{#link-to "login" class="button is-medium is-outlined is-info" }}logout{{/link-to}}
+      </div>
     </div>
-    <div class="control is-negative-margin">
-      {{#link-to "login" class="button button--large is-info"}} Logout {{/link-to}}
-    </div>
+  </div>
+
+
+
+  <div class="columns is-multiline">
+    {{shop-header shop=shop}}
   </div>
 </div>
 
-<section class="section section--last-of-type">
-  <div class="columns is-multiline">
-    <div class="column is-12 is-no-padding">
-      {{shop-header shop=model}}
+
+  <div class="section">
+    {{#each model.drinks as |drink|}}
+      {{shop-menu-item drink=drink onAddToCart=(action "addToCart")}}
+    {{/each}}
+
+    {{#each cart as |cartItem|}}
+      <div class="box">
+        <h2>{{cartItem.drink.name}} - {{cartItem.quantity}}</h2>
+      </div>
+    {{/each}}
     </div>
-  </div>
 
-  {{#each model.drinks as |drink|}}
-    {{shop-menu-item drink=drink onAddToCart=(action "addToCart")}}
-  {{/each}}
-
-  {{#each cart as |cartItem|}}
-    <div class="box">
-      <h2>{{cartItem.drink.name}} - {{cartItem.quantity}}</h2>
-    </div>
-  {{/each}}
-
-
-  <button {{action (perform checkout)}} class="button button-is-br-none button--large is-fullwidth is-info">
+  <button {{action (perform checkout)}} class="button button-is-br-none is-large is-fullwidth is-info">
     <span class="icon">
       <i class="fa fa-shopping-cart"></i>
     </span>
     <span>Checkout</span>
   </button>
-</section>

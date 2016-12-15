@@ -1,13 +1,11 @@
 
-  <div class="level is-mobile">
-    <div class="level-left">
-      <div class="control">
-        <div class="title is-3">{{drink.name}}</div>
-        <p class="subtitle">${{drink.price}}</p>
+    <div class="menu-wrapper">
+      <div class="menu-container">
+        <h1 class="title is-5">{{drink.name}}</h1>
+        <p class="title is-5">{{drink.description}}</p>
+        <p class="title is-5">${{drink.price}}</p>
       </div>
-      <p class="title is-6 is-pulled-left">{{drink.description}}</p>
-    </div>
-    <div class="level-right">
+      <div class="level-right">
       <p class="control__add">
         <span class="qty">
           {{#power-select
@@ -21,11 +19,12 @@
            {{/power-select}}
          </span>
 
-         <a class="button is-info" {{action "addToCart"}}>
+         <a class="button  is-info" {{action "addToCart"}}>
                Add
         </a>
        </p>
      </div>
-   </div>
+    </div>
+
 
 {{yield}}

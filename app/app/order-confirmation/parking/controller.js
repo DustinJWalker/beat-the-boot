@@ -1,7 +1,11 @@
 export default Ember.Controller.extend({
- lat: 45.519743,
- lng: -122.680522,
- zoom: 10,
- emberConfLocation: [45.528298, -122.662986],
- hotel: [45.530891, -122.655504]
+  lat: 36.1627,
+  lng: -86.7816,
+  zoom: 14,
+
+  dangerZone: Ember.computed('model.shop.parking.points.@each.lat', 'model.shop.parking.points.@each.lng', function() {
+    const parking = this.get('model.shop.parking.points') || [];
+
+    return parking.map(r => ({lat: r.lat, lng: r.lng}));
+  }),
 });
