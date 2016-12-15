@@ -14,6 +14,9 @@ export default Ember.Controller.extend({
   },
 
   checkout: task(function * (lineItem) {
+    if(this.cart.length === 0) {
+      return this.get('flashMessages').danger('Cart is empty', { timeout: 2000})
+    }
     // Make a new order and save it and wait
     const order = this.store.createRecord('order', {
       shop: this.model,

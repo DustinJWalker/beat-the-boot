@@ -1,23 +1,7 @@
-<div class="hero hero--adjust">
-
-  <div class="helper">
-    <div class="control is-grouped control-is-align">
-      <div class="control is-expanded">
-        <img class="logo"src="/images/btb.jpeg" alt="">
-
-      </div>
-      <div class="control is-negative-margin">
-        {{#link-to "login" class="button is-medium is-outlined is-info" }}logout{{/link-to}}
-      </div>
-    </div>
-  </div>
-
-
-  <div class="columns is-multiline">
-    {{#each model as |shop|}}
-      {{#link-to "app.shops.menu" shop class="column is-12 is-no-padding" }}
-        {{shop-header shop=shop}}
-      {{/link-to}}
-    {{/each}}
-  </div>
+<div class="columns is-multiline">
+  {{#each model as |shop|}}
+    {{#link-to "app.shops.menu" shop class="column is-12 is-no-padding" }}
+      {{shop-header shop=shop}}
+    {{/link-to}}
+  {{/each}}
 </div>

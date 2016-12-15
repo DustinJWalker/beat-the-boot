@@ -8,7 +8,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
 
   afterModel(model) {
-    if(!model.get('isShopOwner')) {
+    if(!(model.get('isShopOwner') || model.get('shop'))) {
       this.transitionTo('app')
     }
   }
