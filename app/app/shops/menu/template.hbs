@@ -1,39 +1,23 @@
-<div class="hero hero--adjust">
-  <div class="helper">
-    <div class="control is-grouped control-is-align">
-      <div class="control is-expanded">
-        <img class="logo"src="/images/btb.jpeg" alt="">
-
-      </div>
-      <div class="control is-negative-margin">
-        {{#link-to "login" class="button is-medium is-outlined is-info" }}logout{{/link-to}}
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="columns is-multiline">
-    {{shop-header shop=shop}}
-  </div>
+<div class="columns is-multiline">
+  {{shop-header shop=shop}}
 </div>
 
 
-  <div class="section">
-    {{#each model.drinks as |drink|}}
-      {{shop-menu-item drink=drink onAddToCart=(action "addToCart")}}
-    {{/each}}
+<div class="section">
+  {{#each model.drinks as |drink|}}
+    {{shop-menu-item drink=drink onAddToCart=(action "addToCart")}}
+  {{/each}}
 
-    {{#each cart as |cartItem|}}
-      <div class="box">
-        <h2>{{cartItem.drink.name}} - {{cartItem.quantity}}</h2>
-      </div>
-    {{/each}}
+  {{#each cart as |cartItem|}}
+    <div class="box">
+      <h2>{{cartItem.drink.name}} - {{cartItem.quantity}}</h2>
     </div>
+  {{/each}}
+  </div>
 
-  <button {{action (perform checkout)}} class="button button-is-br-none is-large is-fullwidth is-info">
-    <span class="icon">
-      <i class="fa fa-shopping-cart"></i>
-    </span>
-    <span>Checkout</span>
-  </button>
+<button {{action (perform checkout)}} class="button button-is-br-none is-large is-fullwidth is-info">
+  <span class="icon">
+    <i class="fa fa-shopping-cart"></i>
+  </span>
+  <span>Checkout</span>
+</button>
