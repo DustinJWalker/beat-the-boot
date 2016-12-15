@@ -15,19 +15,19 @@ Router.map(function() {
   });
 
   this.route('app', function() {
-    this.route('shops', function() {
-      this.route('menu', { path: '/:shop_id/menu' });
+    this.route('shops', {path: '/'}, function() {
+      this.route('menu', { path: '/shop/:shop_id/menu' });
     });
 
-    this.route('checkout-page', { path: '/:order_id' });
+    // this.route('checkout-page', { path: '/orders/:order_id' });
 
-    this.route('order-confirmation', { path: '/order-confirmation/:order_id' },  function(){
+    this.route('order-confirmation', { path: '/orders/:order_id' },  function(){
       this.route('get-directions');
       this.route('parking');
     });
   });
 
-  this.route('coffee-shop-account', function() {
+  this.route('coffee-shop-account', {path: '/admin'}, function() {
     this.route('account', function() {
       this.route('edit');
       this.route('parking');
