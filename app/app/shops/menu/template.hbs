@@ -5,7 +5,7 @@
 
 <div class="section">
   {{#each model.drinks as |drink|}}
-    {{shop-menu-item drink=drink onAddToCart=(action "addToCart")}}
+    <div class="box">{{shop-menu-item drink=drink onAddToCart=(action "addToCart")}}</div>
   {{/each}}
 
   {{#each cart as |cartItem|}}

@@ -1,56 +1,26 @@
-<div class="menu-wrapper">
-  <div class="menu--left"><p class="title is-5">{{drink.name}}</p></div>
-  <div class="menu--middle">
-    <div class="description-container">
-      <p class="title is-5">{{drink.description}}</p>
-    </div>
+<div class="level-left">
+  <div class="level-item">
+    <p class="title is-5">{{drink.name}}</p>
   </div>
-  <div class="menu--right">
+
+  <div class="level-item">
+    <p class="subtitle is-5">{{drink.description}}</p>
+  </div>
+</div>
+
+<div class="level-right">
+  <div class="level-item">
     <p class="title is-5">${{drink.price}}</p>
-    <p class="control__add">
-      <span class="qty">
-        {{#power-select
-        options=quantities
-        selected=quantitySelected
-        placeholder="Qty"
-        onchange=(action (mut quantitySelected))
-         as |quantity|
-       }}
-         {{quantity}}
-         {{/power-select}}
-       </span>
-
-       <a class="button is-info" {{action "addToCart"}}>
-             Add
-      </a>
-     </p>
-   </div>
+  </div>
+  <div class="level-item">
+    <p class="qty">
+      {{#power-select options=quantities selected=quantitySelected placeholder="Qty" onchange=(action (mut quantitySelected)) as |quantity|}}
+        {{quantity}}
+      {{/power-select}}
+    </p>
   </div>
 
-
-
-        {{!-- <h1 class="title is-5">{{drink.name}}</h1>
-        <p class="title is-5">{{drink.description}}</p>
-        {{!-- <p class="title is-5">${{drink.price}}</p> --}}
-      {{!-- <div class="is-pulled-right">
-      {{!-- <p class="control__add">
-        <span class="qty">
-          {{#power-select
-          options=quantities
-          selected=quantitySelected
-          placeholder="Qty"
-          onchange=(action (mut quantitySelected))
-           as |quantity|
-         }}
-           {{quantity}}
-           {{/power-select}}
-         </span>
-
-         <a class="button is-info" {{action "addToCart"}}>
-               Add
-        </a>
-       </p>
-     </div>   --}}
-
-
-{{yield}}
+  <div class="level-item">
+    <a class="button is-info" {{action "addToCart"}}>Add</a>
+  </div>
+</div>
