@@ -15,9 +15,9 @@
     </section>
     <footer class="modal-card-foot">
       <a href="https://www.google.com/maps/dir//{{ model.shop.address }}" target="_blank" class="button is-fullwidth button--large is-primary">See On Google</a>
-          <a class="button button--large is-info is-fullwidth">
-            Find Parking
-          </a>
+      {{#link-to "app.order-confirmation.parking" class="button button--large is-info is-fullwidth"}}
+        Find Parking
+      {{/link-to}}
     </footer>
   </div>
 </div>
