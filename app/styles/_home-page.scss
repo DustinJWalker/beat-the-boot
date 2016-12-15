@@ -3,7 +3,9 @@
     margin-top: 1rem;
   }
 }
-
+.title {
+  font-weight: 900;
+}
 .coffee-shop {
   position: relative;
   overflow: hidden;
@@ -25,8 +27,8 @@
     transform: translate(-50%, -50%);
     font-size: 5rem;
     color: $white;
-    font-family: 'Lobster', cursive;
     opacity: 0.6;
+    font-family: 'Raleway', sans-serif;
   }
 }
 
