@@ -1,0 +1,44 @@
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title has-text-centered">Your Directions</p>
+      {{#link-to "app.shops"}}
+        <button class="delete"></button>
+      {{/link-to}}
+
+    </header>
+    <section class="modal-card-body">
+      <div class="body">
+        <section class="modal-card-body">
+          <div class="body">
+            {{#leaflet-map class="map" lat=lat lng=lng zoom=zoom}}
+              {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+
+              {{#each model.shop.parking.points as |spot|}}
+                {{marker-layer lat=spot.lat lng=spot.lng}}
+              {{/each}}
+
+              {{#polygon-layer locations=dangerZone color="#5555ff" }}
+                {{#tooltip-layer sticky=true}}
+                  Parking Zone
+                {{/tooltip-layer}}
+              {{/polygon-layer}}
+
+            {{/leaflet-map}}
+          </div>
+        </section>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <div class="level level-space-between">
+        <div class="level-item level-right is-pulled-right">
+          {{#link-to "app.order-confirmation.get-directions" class="button button--large is-info is-fullwidth"}}
+            Back
+          {{/link-to}}
+
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>

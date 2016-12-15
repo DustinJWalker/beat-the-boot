@@ -1,0 +1,39 @@
+<div class="hero is-medium">
+  <div class="hero-body is-centered">
+    {{#simple-form onsubmit=(action "saveUser") class="card" as |formValues|}}
+      <div class="card-content">
+        <h1 class="title has-text-centered">Register</h1>
+        <label class="label">First Name</label>
+        <p class="control">
+          {{input class="input" type="text" placeholder="First Name" value=formValues.name}}
+        </p>
+
+        <label class="label">Email</label>
+        <p class="control">
+          {{input class="input" type="text" placeholder="Email" value=formValues.email}}
+        </p>
+        <label class="label">Password</label>
+
+        <p class="control">
+          {{input class="input" type="password" placeholder="Password" value=formValues.password}}
+        </p>
+        <label class="label">Who are You?</label>
+        <p class="control">
+          <span class="select is-fullwidth">
+            {{#power-select
+              search=false
+              options=shopOwnerOptions
+              selected=selected
+              onchange=(action "editShopOwner" formValues) as |option| }}
+              {{ option.text }}
+            {{/power-select}}
+          </span>
+        </p>
+      </div>
+      <div class="card-footer">
+        {{#link-to "login" class="card-footer-item" }}Already have an account?{{/link-to}}
+        <button class="card-footer-item">Submit</button>
+      </div>
+    {{/simple-form}}
+  </div>
+</div>

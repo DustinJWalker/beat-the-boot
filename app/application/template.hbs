@@ -1,0 +1,40 @@
+<div class="hero hero--adjust">
+
+  <div class="helper">
+    <div class="control is-grouped control-is-align">
+      <div class="control is-expanded">
+        {{#link-to "app.shops"}}<img class="logo" src="/images/btb.jpeg" alt="">{{/link-to}}
+
+      </div>
+      {{#if currentUser.user.shop}}
+        <div class="control">
+          {{#link-to "coffee-shop-account" class="button is-medium is-outlined is-info" }}admin{{/link-to}}
+        </div>
+      {{/if}}
+
+      <div class="control is-negative-margin">
+        {{#if session.isAuthenticated}}
+          <a href="#" class="button is-medium is-outlined is-info" {{action session.invalidate}}>logout</a>
+        {{else}}
+        {{#link-to "login" class="button is-medium is-outlined is-info"}}Login{{/link-to}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <div class="alerts">
+    {{#each flashMessages.queue as |flash|}}
+      {{#flash-message flash=flash as |component message|}}
+        {{log component.flashType}}
+        <div class="message is-{{lowercase component.flashType}}">
+          <div class="message-header">{{component.flashType}}</div>
+          <p class="message-body">
+            {{message.message}}
+          </p>
+        </div>
+      {{/flash-message}}
+    {{/each}}
+  </div>
+
+  {{outlet}}
+</div>

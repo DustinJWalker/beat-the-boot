@@ -1,0 +1,7 @@
+<div class="columns is-multiline">
+  {{#each model as |shop|}}
+    {{#link-to "app.shops.menu" shop class="column is-12 is-no-padding" }}
+      {{shop-header shop=shop}}
+    {{/link-to}}
+  {{/each}}
+</div>

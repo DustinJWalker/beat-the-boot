@@ -1,0 +1,21 @@
+<div class="section">
+  {{bulma-tabs tabs=tabs class="is-boxed"}}
+  <div class="columns is-multiline">
+    <div class="column is-12 is-no-padding">
+      <div class="coffee-shop coffee-shop--height">
+        <h1 class="coffee-shop__overlay">
+          {{currentUser.user.shop.name}}
+        </h1>
+        {{#if shop.profilePicUrl}}
+          <img src="http://localhost:3333/uploads/{{shop.profilePicUrl}}" class="coffee-shop__pic" alt="">
+        {{else}}
+          <img src="/images/Coffee-shop2.jpeg" class="coffee-shop__pic" alt="">
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  {{!-- <div class="tabs is-boxed is-medium">
+  </div> --}}
+   {{outlet}}
+</div>

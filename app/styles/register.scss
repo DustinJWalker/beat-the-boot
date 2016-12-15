@@ -1,0 +1,13 @@
+.select {
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  display: flex;
+  max-width: 25%;
+  margin: 0.5rem;
+}
+
+.modal {
+  background: $primary;
+}

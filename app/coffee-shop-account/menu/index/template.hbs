@@ -1,0 +1,22 @@
+{{#link-to "coffee-shop-account.menu.add" class=" is-pulled-right " }}add{{/link-to}}
+<table class="table table-background">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |drink|}}
+
+    <tr>
+      <td>{{drink.name}}</td>
+      <td>{{drink.description}}</td>
+      <td>{{drink.price}}</td>
+      <td>{{#link-to "coffee-shop-account.menu.edit" drink class="is-pulled-right button is-small is-primary" }}Edit{{/link-to}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

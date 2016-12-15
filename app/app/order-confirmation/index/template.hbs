@@ -1,0 +1,56 @@
+<article class="message is-info">
+  <div class="message-header">
+    Your Order is Complete!
+  </div>
+  <div class="message-body" style="background: white">
+    <h4 class="subtitle has-text-centered">Order Details</h4>
+
+
+    <table class="table" style="background: inherit;">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Total Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model.lineItems as |lineItem|}}
+          <tr>
+            <td>{{lineItem.drink.name}}</td>
+            <td>{{format-money lineItem.drink.price}}</td>
+            <td>{{lineItem.quantity}}</td>
+            <td>{{format-money (mult lineItem.quantity lineItem.drink.price)}}</td>
+          </tr>
+        {{/each}}
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Total:</td>
+          <td>
+            {{format-money (price-total model.lineItems) }}
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Tax:</td>
+          <td>{{format-money (mult (price-total model.lineItems) taxRate) }}</td>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>Total with Tax:</th>
+          <th>
+            {{format-money
+              (add
+                (price-total model.lineItems)
+                (mult (price-total model.lineItems) taxRate)
+              )}}
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</article>
