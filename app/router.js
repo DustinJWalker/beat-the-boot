@@ -7,8 +7,6 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route(`index`);
-
   this.route('login');
   this.route('register', function() {
     this.route('shop-info');
