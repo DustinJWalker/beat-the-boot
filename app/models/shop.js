@@ -24,7 +24,7 @@ export default DS.Model.extend({
 
   fullProfilePicUrl: Ember.computed('profilePicUrl', function() {
     return `${config.DS.host}/uploads/${this.get('profilePicUrl')}`;
-  })
+  }),
 
   address: Ember.computed('street', 'city', 'state', 'zip', function() {
     return `${this.get('street')} ${this.get('city')} ${this.get('state')}`;
