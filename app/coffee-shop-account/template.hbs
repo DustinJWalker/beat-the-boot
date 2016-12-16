@@ -7,7 +7,7 @@
           {{currentUser.user.shop.name}}
         </h1>
         {{#if shop.profilePicUrl}}
-          <img src="http://localhost:3333/uploads/{{shop.profilePicUrl}}" class="coffee-shop__pic" alt="">
+          <img src="{{shop.fullProfilePicUrl}}" class="coffee-shop__pic" alt="">
         {{else}}
           <img src="/images/Coffee-shop2.jpeg" class="coffee-shop__pic" alt="">
         {{/if}}
